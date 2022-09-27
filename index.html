@@ -14,14 +14,32 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            background-color: #000000;
         }
         canvas {
-            background-color: black;
+            background-color: #000000;
+        }
+        .canvas-container {
+            position: relative;
+        }
+        .canvas-container:before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(#ff0000, #00ff00, #0000ff);
+            z-index: -1;
+            filter: blur(30px);
         }
     </style>
     <script src="app.js" defer></script>
 </head>
 <body>
-<canvas width="400" height="800"></canvas>
+<div class="canvas-container">
+    <canvas width="400" height="800"></canvas>
+</div>
 </body>
 </html>
